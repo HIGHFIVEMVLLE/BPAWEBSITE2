@@ -34,17 +34,51 @@ var firebaseConfig = {
           divide.className = "divide";
           divide.innerHTML = "|";
 
+          var divide1 = document.createElement("span");
+          divide1.className = "divide";
+          divide1.innerHTML = "|";
+          var divide2 = document.createElement("span");
+          divide2.className = "divide";
+          divide2.innerHTML = "|";
+          var divide3 = document.createElement("span");
+          divide3.className = "divide";
+          divide3.innerHTML = "|";
+
           var car = document.createElement("span");
           car.className = "name";
           car.innerHTML = value.Make + " ";
-        //   div.innerHTML = "Name: " + value.name + "<br>" + "Make: " + value.Make + ", Model: " + value.Model;
+
+          var model = document.createElement("span");
+          model.className = "name";
+          model.innerHTML = value.Model + " ";
+
+          var year = document.createElement("span");
+          year.className = "name";
+          year.innerHTML = value.Year + " ";
+
+          var ODO = document.createElement("span");
+          ODO.className = "name";
+          ODO.innerHTML = value.Odometer + " ";
       
           var button = document.createElement("button");
+          button.className = "mailButton";
+          button.innerHTML = "More Info";
+          button.onclick = function() {
+            // window.location("personView.html");
+            // localStorage.setItem()
+          }
           
           container.appendChild(div); 
           div.appendChild(fullName);
           div.appendChild(divide);
-          div.appendChild(car);    
+          div.appendChild(car);   
+          div.appendChild(divide1)
+          div.appendChild(model);
+          div.appendChild(divide2);
+          div.appendChild(year); 
+          div.appendChild(divide3);
+          div.appendChild(ODO);
+          div.appendChild(button);
         });
       });
 
@@ -79,7 +113,6 @@ var firebaseConfig = {
           var email = document.createElement("span");
           email.className = "name";
           email.innerHTML = value.Email + " ";
-        //   div.innerHTML = "Name: " + value.name + "<br>" + "Make: " + value.Make + ", Model: " + value.Model;
       
           var button = document.createElement("button");
           
