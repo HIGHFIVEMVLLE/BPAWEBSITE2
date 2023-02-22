@@ -15,7 +15,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Bootstrap CSS () -->
-    <title>Jarson Moters</title>
+    <title>Jarson Motors</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
@@ -40,7 +40,7 @@
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color:  rgb(16, 16, 17);">
       <a class="navbar-brand" href="index.html">
         <img src="Images/clipart-car-shape-4.png" width="90" height="30" class="d-inline-block align-top" alt="HighFive Logo">
-        <span class="navhead">Jarson Moters</span>
+        <span class="navhead">Jarson Motors</span>
       </a> 
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
           <span class="navbar-toggler-icon"></span>
@@ -115,7 +115,7 @@
 
 
 
-    <div id="results" style="color: white;"></div>
+    <div id="results" class="text-center" style="color: white;"></div>
     <div class="grid">
       <!-- <a href="carview.html"> -->
         <div class="grid-item" id="item0" name = "0" style="display: none;" style="display: none;">
@@ -397,26 +397,19 @@
     </script>
     <!-- -------------------------Script for changing images------------------------- -->
     <script>
-       // Declare an array of image URLs to use as the background
-       const images = ['Images/tesla.gif', 'Images/rolly.gif', 'Images/electric.gif', 'Images/road.gif', 'Images/AC.gif'];
+      const images = ['Images/homepage/electric.gif', 'Images/homepage/AC.gif', 'Images/homepage/vroom.gif', 'Images/homepage/ferrari.gif', 'Images/homepage/mech.gif'];
+      
+      let imageIndex = 0;
 
-// Declare a counter to keep track of the current image
-    let imageIndex = 0;
+      function updateDivImage() {
+        const div = document.getElementById('vidCont');
 
-// Declare a function to update the background image of the div
-    function updateDivImage() {
-      // Get the div element
-      const div = document.getElementById('vidCont');
+        div.style.backgroundImage = `url(${images[imageIndex]})`;
 
-      // Update the div's background image
-      div.style.backgroundImage = `url(${images[imageIndex]})`;
-
-      // Increment the counter
-      imageIndex = (imageIndex + 1) % images.length;
+        imageIndex = (imageIndex + 1) % images.length;
     }
-
-    // Call the updateDivImage function every 1000 milliseconds (one second)
     setInterval(updateDivImage, 4000); //change the interval back to 4000
+      
     </script>
     <!-- ---------------------------------------------------------------------------- -->
   
@@ -450,7 +443,7 @@
             <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">Pages</h5>
           <ul class="list-group">
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="index.html">Home</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="finance.html">Finance</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="sell.html">Sell</a></li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="cars.html">Inventory</a></li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="contact.html">Contact Us!</a></li>
           </ul>
@@ -459,15 +452,14 @@
             <h5 class="mb-4 font-weight-bold text-uppercase" style="color: white;" >Money</h5>
           <ul class="list-group">
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.moneyunder30.com/car-affordability-calculator" target="_blank">Income Calculator</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="finance.html">Finance Calculator</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://stackshare.io/naologic">Car Guide</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.edmunds.com/car-buying/10-steps-to-buying-a-used-car.html" target="_blank" >Car Guide</a></li>
           </ul>
           </div>
   
           <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
             <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">What we are</h5>
           <ul class="list-group">
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>About</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.facebook.com/TestingForRed" target="_blank"></i>Facebook</a></li>
           </ul>
           </div>
           <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
@@ -477,14 +469,14 @@
               <a href="https://github.com/stevierajeshmevsd/BPAWEBSITE2"target="_blank" ><i class="fa fa-linkedin mr-1"></i>Github</a>
             </li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-              <a href="#"><i class="fa fa-linkedin mr-1"></i>Documentation</a>
+              <a href="https://docs.google.com/document/d/18Kg-OlYQx4n9niRa5weRcWKiVonnzjpZcPlCq0eRttI/edit?usp=sharing" target="_blank"><i class="fa fa-linkedin mr-1"></i>Documentation</a>
             </li>
           </ul>
           </div>
         </div>
           <div class="col-md-12">
             <div class="py-4 d-flex justify-content-center align-items-center">
-              <a class="mr-4" href="index.html"> © Jarson Moters</a>
+              <a class="mr-4" href="index.html"> © Jarson Motors</a>
             </div>
           </div>
       </div>

@@ -4,10 +4,10 @@ html{
     background-image: linear-gradient(0deg, #2d3436 0%, #000000 74%);
 }
 .box{
-    width: 90%;
-    aspect-ratio: 4/1;
+    width: 50%;
+    
     background-color: green;
-    margin-left: 5%;
+    margin-left: 25%;
     border-radius: 9px;
     background-color: #1f2020;
 
@@ -20,13 +20,23 @@ html{
 .brand{
     color: white;
     margin-left: 4%;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-family: 'Play', sans-serif;
-    margin-top: 2%;
+    margin-top: 0%;
+    
 }
-#branding1{
-    margin-left: 12%;
-    margin-top: -3%;
+.yearsel{
+    color: white;
+    margin-left: 3.8%;
+    font-size: 1.5vw;
+    font-family: 'Play', sans-serif;
+    margin-top: 0%;
+}
+#options{
+    margin-left: 1%;
+    margin-top: 0.5%;
+    height: 3vh;
+    width: 16.9%;
 }
 .submitbuttom{
     width: 20%;
@@ -38,10 +48,135 @@ html{
     border-radius: 20px;
     
 }
-#searchbar{
-    margin-top: 3%;
+.slider{
+    margin-left: 3%;
 }
 
+#year{
+    color: white;
+    margin-left: 1%;
+    font-size: 1.5vw;
+    font-family: 'Play', sans-serif;
+}
+#model{
+    margin-top: 0.7%;
+    margin-left: 0.5%;
+    height: 3vh;
+    width: 16.5%;
+}
+.modelsel{
+    color: white;
+    margin-left: 3.8%;
+    font-size: 1.5vw;
+    font-family: 'Play', sans-serif;
+}
+.namesel{
+    color: white;
+    margin-left: 37.8%;
+    font-size: 1.5vw;
+    font-family: 'Play', sans-serif;
+    margin-top: 5%;
+}
+.carinfo{
+    margin-left: 5%;
+}
+#Color{
+    margin-top: 0.5%;
+    margin-left: 2.0%;
+    height: 3vh;
+    width: 16.5%;
+}
+#col{
+    margin-top: 1%;
+}
+.Details{
+    color: white;
+    margin-left: 5%;
+    font-size: 1.5vw;
+    font-family: 'Play', sans-serif;
+    letter-spacing: 5px;
+}
+.ODO{
+    color: white;
+    margin-left: 3.8%;
+    font-size: 1.5vw;
+    font-family: 'Play', sans-serif;
+}
+
+#ODO{
+    margin-top: 0.5%;
+    margin-left: 2.0%;
+    height: 3vh;
+    width: 9.5%;
+}
+#info2{
+    margin-top: -0.5%;
+}
+.moreinfo{
+    float: right;
+    margin-top: -37%;
+    margin-right: 5%;
+    width: 60%;
+}
+#Legal {
+    margin-left: 2%;
+    color: white;
+    font-size: 1.5vw;
+    font-family: 'Play', sans-serif;
+    letter-spacing: 5px;
+}
+#license{
+    margin-left: 2%;
+    margin-top: 0%;
+    height: 4vh;
+    width: 30vh;
+}
+.LicenseS{
+    color: white;
+    font-size: 1.5vw;
+    font-family: 'Play', sans-serif;
+    margin-left: 15%;
+}
+
+#state{
+    width: 5vh;
+    height: 4vh;
+}
+
+#Name{
+    margin-top: 0.5%;
+    margin-left: 1.5%;
+    height: 3vh;
+    width: 96.5%;
+    background-color: rgb(73, 71, 71);
+    color: white;
+}
+#Email{
+    margin-top: 0.5%;
+    margin-left: 1.5%;
+    height: 3vh;
+    width: 96.5%;
+    background-color: rgb(73, 71, 71);
+    color: white;
+}
+#Number{
+    margin-top: 0.5%;
+    margin-left: 1.5%;
+    height: 3vh;
+    width: 96.5%;
+    background-color: rgb(73, 71, 71);
+    color: white;
+    margin-bottom: 2%;
+}
+input#Name {
+    text-align: center;
+}
+input#Email {
+    text-align: center;
+}
+input#Number {
+    text-align: center;
+}
 @media only screen and (max-width: 600px) {
     .box{
         width: 90%;
@@ -57,19 +192,13 @@ html{
         font-size: 2vh;
         margin-top: -21%;
     }
-    #searchbar{
-        margin-top: 10%;
-    }
-    .searchbar1{
-        margin-left: -62%;
-        margin-top: 200%;
-    }
     .brand{
         color: white;
         margin-left: 4%;
-        font-size: 4vw;
+        font-size: 6vw;
         font-family: 'Play', sans-serif;
         margin-top: 2%;
+        
     }
 
     .submitbuttom{
@@ -81,5 +210,103 @@ html{
         align-items: center;
         border-radius: 20px;
         
+    }
+    .Details{
+        margin-left: 29%;
+        font-size: 4vw;
+        font-family: 'Play', sans-serif;
+        letter-spacing: 3px;
+    }
+    #options{
+        margin-left: 1%;
+        margin-top: 3.5%;
+        height: 3.5vh;
+        width: 70.9%;
+    }
+    .modelsel{
+        color: white;
+        margin-left: 3.8%;
+        font-size: 6vw;
+        font-family: 'Play', sans-serif;
+    }
+    #model{
+        margin-top: 0.7%;
+        margin-left: 0.5%;
+        height: 3vh;
+        width: 70%;
+    }
+    .moreinfo{
+        float: right;
+        margin-top: 13%;
+        margin-right: 23%;
+        width: 60%;
+    }
+    .LicenseS {
+        color: white;
+        font-size: 5vw;
+        font-family: 'Play', sans-serif;
+        margin-left: -12%;
+        margin-top: 5%;
+    }
+    #license{
+        margin-left: 18%;
+        margin-top: -11%;
+        height: 4vh;
+        width: 30vh;
+    }
+    #state {
+        width: 29vh;
+        height: 4vh;
+        margin-left: 21%;
+        margin-top: 3%;
+    }
+    .ODO {
+        color: white;
+        margin-left: 3.8%;
+        font-size: 5vw;
+        font-family: 'Play', sans-serif;
+    }
+    #Color {
+        margin-top: 1.5%;
+        margin-left: 2.0%;
+        height: 3vh;
+        width: 72.5%;
+    }
+    .yearsel {
+        margin-left: 3.8%;
+        font-size: 5vw;
+        font-family: 'Play', sans-serif;
+        margin-top: 0%;
+    }
+    #year {
+        color: white;
+        margin-left: 1%;
+        font-size: 5vw;
+        font-family: 'Play', sans-serif;
+    }
+    #Legal {
+        margin-left: 2%;
+        color: white;
+        font-size: 5vw;
+        font-family: 'Play', sans-serif;
+        letter-spacing: 5px;
+    }
+    #Name{
+        margin-top: 1.5%;
+        margin-left: 2.0%;
+        height: 3vh;
+        width: 72.5%;
+    }
+    #Email{
+        margin-top: 1.5%;
+        margin-left: 2.0%;
+        height: 3vh;
+        width: 72.5%;
+    }
+    #Number{
+        margin-top: 1.5%;
+        margin-left: 2.0%;
+        height: 3vh;
+        width: 72.5%;
     }
 }

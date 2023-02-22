@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +18,7 @@
     <!-- Bootstrap CSS () -->
     <!-- jQuery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <title>Jarson Moters</title>
+    <title>Jarson Motors</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
@@ -41,7 +43,7 @@
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color:  rgb(16, 16, 17);">
       <a class="navbar-brand" href="index.html">
         <img src="Images/clipart-car-shape-4.png" width="90" height="30" class="d-inline-block align-top" alt="HighFive Logo">
-        <span class="navhead">Jarson Moters</span>
+        <span class="navhead">Jarson Motors</span>
       </a> 
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
           <span class="navbar-toggler-icon"></span>
@@ -177,7 +179,36 @@
     <br>
     <br>
     <br>
-  
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "110823124905032");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v15.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
     
     <script>
       var loader = document.getElementById("preloader");
@@ -206,7 +237,7 @@
             <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">Pages</h5>
           <ul class="list-group">
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="index.html">Home</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="finance.html">Finance</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="sell.html">Sell</a></li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="cars.html">Inventory</a></li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="contact.html">Contact Us!</a></li>
           </ul>
@@ -215,15 +246,14 @@
             <h5 class="mb-4 font-weight-bold text-uppercase" style="color: white;" >Money</h5>
           <ul class="list-group">
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.moneyunder30.com/car-affordability-calculator" target="_blank">Income Calculator</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="finance.html">Finance Calculator</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://stackshare.io/naologic">Car Guide</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.edmunds.com/car-buying/10-steps-to-buying-a-used-car.html" target="_blank" >Car Guide</a></li>
           </ul>
           </div>
   
           <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
             <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">What we are</h5>
           <ul class="list-group">
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>About</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.facebook.com/TestingForRed" target="_blank"></i>Facebook</a></li>
           </ul>
           </div>
           <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
@@ -233,14 +263,14 @@
               <a href="https://github.com/stevierajeshmevsd/BPAWEBSITE2"target="_blank" ><i class="fa fa-linkedin mr-1"></i>Github</a>
             </li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-              <a href="#"><i class="fa fa-linkedin mr-1"></i>Documentation</a>
+              <a href="https://docs.google.com/document/d/18Kg-OlYQx4n9niRa5weRcWKiVonnzjpZcPlCq0eRttI/edit?usp=sharing" target="_blank"><i class="fa fa-linkedin mr-1"></i>Documentation</a>
             </li>
           </ul>
           </div>
         </div>
           <div class="col-md-12">
             <div class="py-4 d-flex justify-content-center align-items-center">
-              <a class="mr-4" href="index.html"> © Jarson Moters</a>
+              <a class="mr-4" href="index.html"> © Jarson Motors</a>
             </div>
           </div>
       </div>

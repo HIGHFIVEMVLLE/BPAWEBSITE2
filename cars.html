@@ -16,7 +16,7 @@
     <!-- Bootstrap CSS () -->
     <!-- jQuery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <title>Jarson Moters</title>
+    <title>Jarson Motors</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
@@ -47,7 +47,7 @@
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color:  rgb(16, 16, 17);">
       <a class="navbar-brand" href="index.html">
         <img src="Images/clipart-car-shape-4.png" width="90" height="30" class="d-inline-block align-top" alt="HighFive Logo">
-        <span class="navhead">Jarson Moters</span>
+        <span class="navhead">Jarson Motors</span>
       </a> 
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
           <span class="navbar-toggler-icon"></span>
@@ -55,12 +55,12 @@
       <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-              <a class="nav-link" href="Sell.html">
+              <a class="nav-link" href="sell.html">
                 Sell
               </a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="Cars.html">
+              <a class="nav-link" href="cars.html">
                 Cars
               </a>
           </li>
@@ -82,7 +82,7 @@
   <body class="bg-transparent">
     <div id ="preloader"></div>
     <div id ="body-wrapper">
-      <h1 class="head" id="desc">Browse Our Avalable Cars:</h1>
+      <h1 class="head" id="desc"><a href="test.html">Browse Our Avalable Cars:</a></h1>
 
 
 
@@ -92,7 +92,7 @@
           <button type="submit" id="button">Search</button>
         </form>
       </div>
-      <div id="results" style="color: white;"></div>
+      <div id="results" class = "text-center" style="color: white;"></div>
       <br>
       <br>
       <br>
@@ -291,9 +291,7 @@
       </div>
       
 
-      <!-- <div class="popup-div">
-        This is the pop up div that has all the information.
-      </div> -->
+    
       <br>
       <br>
       <br>
@@ -305,68 +303,46 @@
       <br>
       <br>
       <br>
-      <!-- <h1 style="color: white">Car price is: $40,000</h1>
       <br>
       <br>
-      <input type="range" style="margin-left: 4%;" min="0" max="40000" value="20000" step="100" onchange="sliderChange(this.value)">
-      <div class="row" style="margin-left: .1%;">
-        <p style="color: white;">Slider value =  </p>
-        <span id="sliderStatus" style="color: white">20000</span>    
-      </div>
-       -->
       <br>
       <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
 
-      <!-- Financing logic -->
-      <!-- <p style="color: white">Please select your credit score: </p>
-      <form>
-        <select id="ddlViewBy">
-          <option value="0">Excellent Credit: (720-850)</option>
-          <option value="1">Great: (690-719)</option>
-          <option value="2">Very good: (670-689)</option>
-          <option value="3">Good: (650-669)</option>
-          <option value="4">Average: (630-649)</option>
-          <option value="5">Below Average: (620-629)</option>
-          <option value="6">Poor: (580-609)</option>
-          <option value="7">Very Poor: (580 less)</option>
-        </select>
-      </form>
-      <br><br>
-      <p style="color: white">Your Interest rate based on your credit score is: </p>
-      <input type="text" id="myText" value="Interest Rate..."> <br>
-      <button onclick="myFunction()">Click me</button>
-      <br>
-      <br>
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
 
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "110823124905032");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
 
-      <div class="row" style="color: white">
-        <p>&ensp;&ensp;Monthly interest rate for 36 months:&ensp; </p>
-        <span id="36month" style="color: white">0</span>
-      </div>
-      <div class="row">
-        <p style="color: white">&ensp;&ensp;Monthly interest rate for 48 months:&ensp; </p>
-        <span id="48month" style="color: white">0</span>
-      </div>
-      <div class="row">
-        <p style="color: white">&ensp;&ensp;Monthly interset rate for 60 months:&ensp; </p>
-        <span id="60month" style="color: white">0</span>
-      </div> -->
-      
-      
+<!-- Your SDK code -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v15.0'
+    });
+  };
 
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-
-      <br>
-      <br>
-      
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
       <script>
         var loader = document.getElementById("preloader");
         
@@ -394,24 +370,23 @@
             <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">Pages</h5>
           <ul class="list-group">
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="index.html">Home</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="finance.html">Finance</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="sell.html">Sell</a></li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="cars.html">Inventory</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="carview.html">Debug</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="contact.html">Contact Us!</a></li>
           </ul>
           </div>
           <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
             <h5 class="mb-4 font-weight-bold text-uppercase" style="color: white;" >Money</h5>
           <ul class="list-group">
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.moneyunder30.com/car-affordability-calculator" target="_blank">Income Calculator</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="finance.html">Finance Calculator</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://stackshare.io/naologic">Car Guide</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.edmunds.com/car-buying/10-steps-to-buying-a-used-car.html" target="_blank" >Car Guide</a></li>
           </ul>
           </div>
   
           <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
             <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">What we are</h5>
           <ul class="list-group">
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>About</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.facebook.com/TestingForRed" target="_blank"></i>Facebook</a></li>
           </ul>
           </div>
           <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
@@ -421,14 +396,14 @@
               <a href="https://github.com/stevierajeshmevsd/BPAWEBSITE2"target="_blank" ><i class="fa fa-linkedin mr-1"></i>Github</a>
             </li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-              <a href="#"><i class="fa fa-linkedin mr-1"></i>Documentation</a>
+              <a href="https://docs.google.com/document/d/18Kg-OlYQx4n9niRa5weRcWKiVonnzjpZcPlCq0eRttI/edit?usp=sharing" target="_blank"><i class="fa fa-linkedin mr-1"></i>Documentation</a>
             </li>
           </ul>
           </div>
         </div>
           <div class="col-md-12">
             <div class="py-4 d-flex justify-content-center align-items-center">
-              <a class="mr-4" href="index.html"> © Jarson Moters</a>
+              <a class="mr-4" href="index.html"> © Jarson Motors</a>
             </div>
           </div>
       </div>

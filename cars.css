@@ -19,7 +19,7 @@ html{
 }
 .banner{
   width: 100%;
-  background-color: rgba(0, 52, 119, 0.486);;
+  background-color: rgba(0, 52, 119, 0.486);
   height: 14%;
 }
 /* ----------------------------Search Bar------------------------------------ */
@@ -214,11 +214,13 @@ input[type="search"]:focus {
 .grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        border: blue 3px solid;
       }
       .grid-item{
         /* border: solid white 3px; */
         padding: 15px;
         transition: all 300ms;
+        border: red solid 3px;
         /* display: none; */
       }
       .grid-item:hover{

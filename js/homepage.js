@@ -1,120 +1,80 @@
+var firebaseConfig = {
+  apiKey: "AIzaSyARcy-CcpHXynmS1HBAiBwH_uZcpJvNfMY",
+  authDomain: "jarson-motors.firebaseapp.com",
+  databaseURL: "https://jarson-motors-default-rtdb.firebaseio.com",
+  projectId: "jarson-motors",
+  storageBucket: "jarson-motors.appspot.com",
+  messagingSenderId: "431759934002",
+  appId: "1:431759934002:web:3fc09307a109a49705722b",
+  measurementId: "G-MB7NKYMMH3"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+  var dataRef = database.ref("/sellRequest");
 
-function homepageSearch(userValue)
-{
-    // window.location.replace('cars.html');
-  event.preventDefault();
-  const value = userValue;
-  const QUERY1 = value.toString();
-  const query = QUERY1.toLowerCase();
-  
-  
-  
-  
-  //The words array extraces the words from the user's query
-  let words = [];
-  let currentWord = "";
-  for (let j = 0; j < query.length; j++) {
-  let char = query[j];
-  if (char === " ") {
-      words.push(currentWord);
-      currentWord = "";
-  } else {
-      currentWord += char;
-    }
-  }
-  words.push(currentWord); 
-  
-  
-  let Make = [];
-  let Model = [];
-  let Trim = [];
-  let Year = [];
-  
-  let indexValue = [];
-  let holder = words[0];
-  for(var i = 0; i < 4; i++){ for(var k = 0; k < data.length; k++){ if(data[k].make === holder){ Make.push(k); }}
-    for(var k = 0; k < data.length; k++){ if(data[k].trim === holder){ Trim.push(k); }}
-    for(var k = 0; k < data.length; k++){ if(data[k].model === holder){ Model.push(k); }}
-    for(var k = 0; k < data.length; k++){ if(data[k].year === holder){ Year.push(k); }}
-    holder = words[i];
-  }
-  
-  
-  //creating the match data which contains the index value of the car based on the user's query.
-  let matchData = [];
-  let matches = [];
-  if(Make.length > 0 && Model.length > 0 && Year.length > 0){
-    matches = Make.filter(num => Model.includes(num) && Year.includes(num));
-  }
-  else if(Make.length === 0 && Model.length === 0 && Year.length > 0){  matches = Year;  }
-  else if(Make.length > 0 && Model.length === 0 && Year.length === 0){  matches = Make;  }
-  else if(Make.length === 0 && Model.length > 0 && Year.length === 0){  matches = Model;  }
-  else if(Make.length > 0 && Model.length > 0 && Year.length === 0){  matches = Make.filter(num => Model.includes(num));  }
-  else if(Make.length === 0 && Model.length > 0 && Year.length > 0){  matches = Year.filter(num => Model.includes(num));  }
-  else if(Make.length > 0 && Model.length === 0 && Year.length > 0){  matches = Make.filter(num => Year.includes(num));  }
-  else{  matches = -1;  }
-  
-  
-  
-  //pushing the right data into the matches array.
-  if(matches != -1){
-    for(var i = 0; i < matches.length; i++){
-      matchData.push(data[matches[i]]);
-    }
-  }
-  
-  console.log(matches);
-  
-  
-  //This makes an array that has the right name of all the grid values. 
-  var properdiv = [];
-  for(var i = 0; i < data.length; i++){
-    var placeholder = "item" + i;
-    properdiv.push(placeholder);
-    // divNumber(placeholder);
-  }
-  
-  
-    
-  
-    if(matches != -1){
-      for(var i = 0; i < matches.length; i++){
-        matchData.push(data[matches[i]]);
-      }
-    }
-  
-    console.log(matches);
-  
-    for(var i = 0; i < data.length; i++){
-      for(var j = 0; j < matches.length; j++){
-        if(i != matches[j]){
-          document.getElementById('item' + i).style.display = "none";
-        }
-      }
-    }
-  
-    // console.log("Matches: " + matches);
-    // console.log(matchData);
-  
-  
-  //this pushes the car information on the data array to the dataValue array.
-  var dataValue = [];
-  for(var i = 0; i < matches.length; i++){ for(var j = 0; j < data.length; j++){ if(matches[i] == j){ dataValue.push(data[j]); }}}
-  
-  //This makes the right grid values to be visible to the user. 
-  for(var i = 0; i < data.length; i++){
-    for(var j = 0; j < dataValue.length; j++){ if(dataValue[j] == data[i]){ document.getElementById(properdiv[i]).style.display = "block"; }}
-  }
-  console.log(dataValue);
-  
-  
-  // Clear the results container
-  resultsContainer.innerHTML = '';
-  
-  // Loop through the results and add them to the page
-  matchData.forEach(item => {
-    const resultElement = document.createElement('div');
-    resultElement.textContent = `${item.year} ${item.make} ${item.model} ${item.trim}`;
-    resultsContainer.appendChild(resultElement);
+
+//Moves the user inforamtion to the database. 
+document.getElementById("submit-button").addEventListener("click", function() {
+  var name = document.getElementById("name").value;
+  var age = document.getElementById("age").value;
+  var city = document.getElementById("city").value;
+  dataRef.child(name).set({ name: name, age: age, city: city });
+});
+
+
+
+//This chuck makes a new div container with all the relevent information that is in the database.
+dataRef.on("value", function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+
+    var key = childSnapshot.key;
+    var value = childSnapshot.val();
+
+    var container = document.getElementById("box");
+    var div = document.createElement("div");
+    div.className = "selection";
+    div.innerHTML = "Key: " + value.age + "<br>" + "Age: " + value.age + ", City: " + value.city;
+    // JSON.stringify(value)
+
+    var button = document.createElement("button");
+    button.className = "mail-button";
+    button.innerHTML = "Send email";
+    button.onclick = function() {
+      window.location.href = "mailto:example@email.com";
+    };
+    container.appendChild(div);
+    div.appendChild(button);
+
+
   });
-  }
+});
+
+
+
+
+
+
+
+// //Prints the values that are in the database in the website as a link.
+// dataRef.on("value", function(snapshot) {
+//   var keyList = "";
+//   snapshot.forEach(function(childSnapshot) {
+//     var key = childSnapshot.key;
+//     keyList += "<a href='#' onclick='displayData(\"" + key + "\")'>" + key + "</a><br>";
+//   });
+
+//   document.getElementById("keyContainer").innerHTML = keyList;
+// });
+
+
+// //This function is being used on the chunk above this one. 
+// function displayData(key) {
+//   var dataRef = database.ref("data/" + key);
+//   dataRef.once("value", function(snapshot) {
+//     var data = snapshot.val();
+//     var dataString = "";
+//     console.log(data.name);
+//     document.getElementById("dataContainer").innerHTML = dataString;
+//   });
+// }

@@ -16,7 +16,7 @@
     <!-- Bootstrap CSS () -->
     <!-- jQuery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <title>Jarson Moters</title>
+    <title>Jarson Motors</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
@@ -33,6 +33,8 @@
       }
 
     </style>
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-database.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -41,7 +43,7 @@
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color:  rgb(16, 16, 17);">
       <a class="navbar-brand" href="index.html">
         <img src="Images/clipart-car-shape-4.png" width="90" height="30" class="d-inline-block align-top" alt="HighFive Logo">
-        <span class="navhead">Jarson Moters</span>
+        <span class="navhead">Jarson Motors</span>
       </a> 
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
           <span class="navbar-toggler-icon"></span>
@@ -77,123 +79,234 @@
     <br>
     <br>
     <br>
-    <h1 class="text-center" id="begin">-Enter your details so we can help you-</h1>
-    <div class="box">
-      <br>
-      <!-- <form class="branding"> -->
-        <!-- <p class="brand">Brand:</p>
-        <select id="branding1">
-          <option>Acura</option>
-          <option>Alfa Romeo</option>
-          <option>Aston Martin</option>
-          <option>Audi</option>
-        </select>
-      </form> -->
-      <div class="container">
-        <br>
-        <div class="row">
-          <div class="col">
-            <p class="brand">Brand:</p>
-          </div>
-          <div class="col">
-            <input id="searchbar" class="searchbar1" type="text"
-        name="search" placeholder="Brand">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <p class="brand">Model:</p>
-          </div>
-          <div class="col">
-            <input id="searchbar" type="text"
-        name="search" placeholder="Model">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <p class="brand">Year:</p>
-          </div>
-          <div class="col">
-            <input id="searchbar" type="text"
-            name="search" placeholder="Year">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <p class="brand">Miles Ridden:</p>
-          </div>
-          <div class="col">
-            <input id="searchbar" type="text"
-            name="search" placeholder="Miles">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6 ">
-            <p class="brand">Email:</p>
-          </div>
-          <div class="col">
-            <input id="searchbar" type="text"
-            name="search" placeholder="abc@xyzmail.com...">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="submitbuttom">
-      <input type="submit" value="Send Vehicle Details" style="width: 100%;" onclick="moveUser()">
-    </div>
-    <script>
-      function moveUser(){
-        window.location.replace('placed.html');
+    <h1 class="text-center" id="begin">-Enter Seller Information-</h1>
+    <form class="branding" autocomplete="off">
+      <style>input#license {
+        text-align: center;
       }
-    </script>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+      </style>
+    <div class="box" id="info1">
+      <br>
+      <p id="error" style="display: none;">The display is currently none for this!</p>
+      <p class="Details">Vehicle Details</p>
+      <div class="carinfo">
+        
+        <div class="row">
+          <p class="brand">Make:</p>
+          <select id="options">
+            <option>Select Make</option>
+            <option>Acura</option>
+            <option>Alfa Romeo</option>
+            <option>Aston Martin</option>
+            <option>Audi</option>
+            <option>Bentley</option>
+            <option>BMW</option>
+            <option>Buick</option>
+            <option>Cadillac</option>
+            <option>Chevrolet</option>
+            <option>Chrysler</option>
+            <option>Dodge</option>
+            <option>Ferrari</option>
+            <option>Ford</option>
+            <option>Genesis</option>
+            <option>GMC</option>
+            <option>Honda</option>
+            <option>Hyundai</option>
+            <option>Infiniti</option>
+            <option>Jaguar</option>
+            <option>Jeep</option>
+            <option>Kia</option>
+            <option>Lamborghini</option>
+            <option>Land Rover</option>
+            <option>Lexus</option>
+            <option>Lincoln</option>
+            <option>Lotus</option>
+            <option>Maserati</option>
+            <option>Mazda</option>
+            <option>McLaren</option>
+            <option>Mercedes-Benz</option>
+            <option>Mini</option>
+            <option>Mitsubishi</option>
+            <option>Nissan</option>
+            <option>Porsche</option>
+            <option>Ram</option>
+            <option>Rolls-Royce</option>
+            <option>Subaru</option>
+            <option>Tesla</option>
+            <option>Toyota</option>
+            <option>Volkswagen</option>
+            <option>Volvo</option>
+          </select>
+        </div>
+        <div class="row">
+          <span class="modelsel">Model: </span>
+          <input type="text" placeholder="Select Model" id ="model" style="outline:none;">
+        </div>
+        <div class="row" id="col">
+          <span class="modelsel">Color: </span>
+          <input type="text" placeholder="Select Color" id ="Color" style="outline:none;">
+        </div>
+        <div class="row" id="col">
+          <span class="ODO">Odometer:</span>
+          <input type="text" placeholder="XXX,XXX" id ="ODO" style="outline:none;">
+        </div>
+        <div class="row" id="col">
+          <span class="yearsel">Year: </span>
+          <span id="year">1930</span>
+        </div>
+      <input type="range" min="1930" max="2023" value="50" oninput="updateValue(this.value)" class="slider" id="yearSlider">
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    </div>
+      <div class="moreinfo">
+        <p class="text-center" id="Legal">Legal Details</p>
+        <div class="row">
+          <span class="LicenseS">License: </span>
+          <input type="text" placeholder="-Input License Plate-" id ="license" style="outline:none;" maxlength="7">
+          <span>
+            <select id="state">
+            <option>AL</option>
+            <option>AK</option>
+            <option>AZ</option>
+            <option>AR</option>
+            <option>CA</option>
+            <option>CO</option>
+            <option>CT</option>
+            <option>DE</option>
+            <option>FL</option>
+            <option>GA</option>
+            <option>HI</option>
+            <option>ID</option>
+            <option>IL</option>
+            <option>IN</option>
+            <option>IA</option>
+            <option>KS</option>
+            <option>KY</option>
+            <option>LA</option>
+            <option>ME</option>
+            <option>MD</option>
+            <option>MA</option>
+            <option>MI</option>
+            <option>MN</option>
+            <option>MS</option>
+            <option>MO</option>
+            <option>MT</option>
+            <option>NE</option>
+            <option>NV</option>
+            <option>NH</option>
+            <option>NJ</option>
+            <option>NM</option>
+            <option>NY</option>
+            <option>NC</option>
+            <option>ND</option>
+            <option>OH</option>
+            <option>OK</option>
+            <option>OR</option>
+            <option>PA</option>
+            <option>RI</option>
+            <option>SC</option>
+            <option>SD</option>
+            <option>TN</option>
+            <option>TX</option>
+            <option>UT</option>
+            <option>VT</option>
+            <option>VA</option>
+            <option>WA</option>
+            <option>WV</option>
+            <option>WI</option>
+            <option>WY</option>
+          </select> </span>
+        </div>
+      </div>
+      <script>
+        function updateValue(val) {
+          document.getElementById("year").innerHTML = val;
+        }
+      </script>
+    </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <br>
-    <br>
+    <!-- <br><br> -->
+    <div class="box" id="info2" style="display: none">
+      <span class="namesel">Contact Details: </span>
+      <input type="text" placeholder="Enter your first and last name here" id ="Name" style="outline:none;" autocomplete="off">
+      <input type="text" placeholder="Enter your email here" id ="Email" style="outline:none;" autocomplete="off">
+      <input type="text" placeholder="Enter your phone number here" id ="Number" style="outline:none;" autocomplete="off">
+    </div>
     
+
+    </form>
+    <div class="submitbuttom">
+      <input type="submit" id="button1" value="Next" style="width: 100%; display: block;" onclick="moveUserNext()">
+      <input type="submit" id="button2" value="Submit Vehicle Details" style="width: 100%; display: none;">
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br> -->
+<!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+
+
+
+
+
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v15.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
     <script>
       var loader = document.getElementById("preloader");
-      
+          
       window.addEventListener("load", function(){
         loader.style.display = "none";
       })
-    </script>
+    </script> -->
+    <script src="js/sell.js"></script>
+        
   </body>
   <footer>
     <div class="container pt-5 border-bottom">
@@ -211,7 +324,7 @@
             <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">Pages</h5>
           <ul class="list-group">
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="index.html">Home</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="finance.html">Finance</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="sell.html">Sell</a></li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="cars.html">Inventory</a></li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="contact.html">Contact Us!</a></li>
           </ul>
@@ -220,15 +333,14 @@
             <h5 class="mb-4 font-weight-bold text-uppercase" style="color: white;" >Money</h5>
           <ul class="list-group">
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.moneyunder30.com/car-affordability-calculator" target="_blank">Income Calculator</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="finance.html">Finance Calculator</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://stackshare.io/naologic">Car Guide</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.edmunds.com/car-buying/10-steps-to-buying-a-used-car.html" target="_blank" >Car Guide</a></li>
           </ul>
           </div>
   
           <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
             <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">What we are</h5>
           <ul class="list-group">
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>About</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.facebook.com/TestingForRed" target="_blank"></i>Facebook</a></li>
           </ul>
           </div>
           <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
@@ -238,14 +350,14 @@
               <a href="https://github.com/stevierajeshmevsd/BPAWEBSITE2"target="_blank" ><i class="fa fa-linkedin mr-1"></i>Github</a>
             </li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-              <a href="#"><i class="fa fa-linkedin mr-1"></i>Documentation</a>
+              <a href="https://docs.google.com/document/d/18Kg-OlYQx4n9niRa5weRcWKiVonnzjpZcPlCq0eRttI/edit?usp=sharing" target="_blank"><i class="fa fa-linkedin mr-1"></i>Documentation</a>
             </li>
           </ul>
           </div>
         </div>
           <div class="col-md-12">
             <div class="py-4 d-flex justify-content-center align-items-center">
-              <a class="mr-4" href="index.html"> © Jarson Moters</a>
+              <a class="mr-4" href="index.html"> © Jarson Motors</a>
             </div>
           </div>
       </div>
