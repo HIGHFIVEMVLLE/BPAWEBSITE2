@@ -39,3 +39,4 @@ var firebaseConfig = {
   // var firebaseUpadate = firebase.database.ref("/sellRequest");
   // ref.set
 
+divID.src = carsImages[Number(localStorage.getItem("idNumber"))];
