@@ -1,4 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 html{
     background-color: #2d3436;
     background-image: linear-gradient(0deg, #2d3436 0%, #000000 74%);
 }
+
+.head {
+  margin-top: 5%;
+  font-family: 'Play', sans-serif;
+  margin-left: 1%;
+  color:white;
+}
+
+.name{
+  font-family: 'Play', sans-serif;
+  font-size: medium;
+  margin-left: 62%;
+  margin-top: 41%;
+}
+.banner{
+  width: 100%;
+  background-color: rgba(0, 52, 119, 0.486);
+  height: 14%;
+}
+/* ----------------------------Search Bar------------------------------------ */
+.formContainer {
+  /* width: fit-content; */
+  width: 40%;
+  background-color: white;
+  border-radius: 6px;
+  margin-top: 8%;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form.sampleFrom {
+  color: black;
+  display: flex;
+  padding: 2px;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  margin: 0 0 0px;
+  width: 100%;
+}
+
+input[type="search"] {
+  border: none;
+  /* background: transparent; */
+  width: 100%;
+  padding: 7px 8px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  display:flex;
+}
+
+
+
+button[type="submit"] {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 5%;
+  padding: 2px;
+  margin-left: auto;
+  align-content: right;
+  margin-right: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+  cursor: pointer;
+  opacity: 1;
+}
+
+button[type="submit"]:hover {
+  opacity: 1;
+}
+
+button[type="submit"]:focus,
+input[type="search"]:focus {
+  box-shadow: 0 0 3px 0 #1183d6;
+  border-color: #1183d6;
+  outline: none;
+}
+/* ----------------------------Search Bar------------------------------------ */
+
+
+@media only screen and (max-width: 600px) {
+  .head {
+    margin-top: 20%;
+    margin-left: 23%;
+    font-size: large;
+  }
+  .name{
+    font-family: 'Play', sans-serif;
+    font-size: medium;
+    margin-left: 50%;
+    margin-top: 41%;
+  }
+}
+/* _-------------------------CARS--------------------------------------------------- */
+#toyotacamry{
+  background: url(Images/CARSHOW/Toyota_Camry1.png);
+  background-size: cover;
+}
+#lexusls{
+  background: url(Images/CARSHOW/lexusls.jpg);
+  background-size: cover;
+}
+#suburulegacy{
+  background: url(Images/CARSHOW/suburulegacy.jpg);
+  background-size: cover;
+}
+#AudiA6{
+  background: url(Images/CARSHOW/audia6.jpg);
+  background-size: cover;
+}
+#Chrysler300{
+  background: url(Images/CARSHOW/chrystler300.jpg);
+  background-size: cover;
+}
+#ChevroletSonic{
+  background: url(Images/CARSHOW/ChevySonic.jpg);
+  background-size: cover;
+}
+#BMW3Series{
+  background: url(Images/CARSHOW/BMW3SERIES.jpg);
+  background-size: cover;
+}
+#DodgeCharger{
+  background: url(Images/CARSHOW/DodgeCharger.jpg);
+  background-size: cover;
+}
+#ToyotaCorolla{
+  background: url(Images/CARSHOW/toyotacorolla.jpg);
+  background-size: cover;
+}
+#VolkswagenPassat{
+  background: url(Images/CARSHOW/VolkswagenPassat.jpg);
+  background-size: cover;
+}
+#HyundaiSonata{
+  background: url(Images/CARSHOW/HyundaiSonata.jpg);
+  background-size: cover;
+}
+#HondaCrv{
+  background: url(Images/CARSHOW/HONDACRV.jpg);
+  background-size: cover;
+}
+#NissanVersa{
+  background: url(Images/CARSHOW/NissanVersa.jpg);
+  background-size: cover;
+}
+#AcuraRDX{
+  background: url(Images/CARSHOW/ACURARDX.jpg);
+  background-size: cover;
+}
+#KiaSportage{
+  background: url(Images/CARSHOW/KiaSportage.jpg);
+  background-size: cover;
+}
+#HondaOdyssey{
+  background: url(Images/CARSHOW/HondaOdyssey.jpg);
+  background-size: cover;
+}
+#JeepCompass{
+  background: url(Images/CARSHOW/JeepCompas.jpg);
+  background-size: cover;
+}
+#SuburuBRZ{
+  background: url(Images/CARSHOW/SUBURUBRZ.jpg);
+  background-size: cover;
+}
+#NissanRogue{
+  background: url(Images/CARSHOW/Rogue-2021.jpg);
+  background-size: cover;
+
+}
+#VolkswagenJetta{
+  background: url(Images/CARSHOW/VOLKSWAGENJETTA.jpg);
+  background-size: cover;
+
+}
+#ChryslerPacifica{
+  background: url(Images/CARSHOW/ChrystlerPacifica.png);
+  background-size: cover;
+
+}
+#FordEscape{
+  background: url(Images/CARSHOW/FordEscape.jpg);
+  background-size: cover;
+
+}
+#ChevroletMalibu{
+  background: url(Images/CARSHOW/ChevyMalibu.webp);
+  background-size: cover;
+}
+#ToyotaHighlander{
+  background: url(Images/CARSHOW/ToyotaHyland.jpg);
+  background-size: cover;
+}
+#GMCAcadia{
+  background: url(Images/CARSHOW/GMC.jpg);
+  background-size: cover;
+}
+#HondaAccord{
+  background: url(Images/CARSHOW/Hondaaccord.jpg);
+  background-size: cover;
+}
+#ToyotaRav{
+  background: url(Images/CARSHOW/ToyotRav.jpg);
+  background-size: cover;
+}
+/* This is for the grid setup */
+.grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: blue 3px solid;
+      }
+      .grid-item{
+        /* border: solid white 3px; */
+        padding: 15px;
+        transition: all 300ms;
+        border: red solid 3px;
+        /* display: none; */
+      }
+      .grid-item:hover{
+        opacity: 0.8;
+        transform: scale(1.10);
+      }
+      .grid-content{
+        border: 3px solid rgb(65, 65, 67);;
+        aspect-ratio: 2;
+        color: white;
+        border-radius: 10px;
+      }
+
+      .new-div{
+        color: white;
+        background-color: lightblue;
+        width: 100px;
+        height: 100px;
+      }
+
+      @media (max-width: 768px) {
+        .grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        .grid-item{
+            padding: 30px;
+        }
+      }
+      
+
+
+
+

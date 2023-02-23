@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cars.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
@@ -14,9 +15,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Bootstrap CSS () -->
-    <!-- jQuery -->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <title>Jarson Moters</title>
+    <title>Jarson Motors</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
@@ -41,7 +40,7 @@
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color:  rgb(16, 16, 17);">
       <a class="navbar-brand" href="index.html">
         <img src="Images/clipart-car-shape-4.png" width="90" height="30" class="d-inline-block align-top" alt="HighFive Logo">
-        <span class="navhead">Jarson Moters</span>
+        <span class="navhead">Jarson Motors</span>
       </a> 
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
           <span class="navbar-toggler-icon"></span>
@@ -49,8 +48,8 @@
       <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-              <a class="nav-link" href="finance.html">
-                Finance
+              <a class="nav-link" href="sell.html">
+                Sell
               </a>
           </li>
           <li class="nav-item">
@@ -72,42 +71,259 @@
     <div id ="preloader"></div>
     <div class="vidCont" id="vidCont">
       
-      <h1 class="text-center" id="Header">We Only Sell The Best Cars.</h1>
+      <h1 class="text-center" id="Header">FIND YOUR DREAM CAR</h1>
+      <script>
+          const slogans = [
+          "Luxury rides for the refined driver.",
+          "Indulge in the finer things on the road.",
+          "Expect the extraordinary at our dealership.",
+          "Drive the best, at our dealership.",
+          "Where luxury meets performance.",
+          "Life is too short to drive anything but the best.",
+          "Elevate your daily drive.",
+          "Expect nothing but the best at our dealership.",
+          "Discover a world of luxury on wheels.",
+          "Experience the ultimate in automotive luxury.",
+          "Indulge in the ultimate driving machine.",
+          "Experience the thrill of driving a work of art.",
+          "Find your dream car at our dealership."
+        ];
+        const sloganEl = document.getElementById("Header");
+        sloganEl.textContent = slogans[Math.floor(Math.random() * slogans.length)];
+      </script>
+
+
       <div class="formContainer">
-        <form class="sampleFrom">
+        <!-- <form class="sampleFrom" action="cars.html">
           <input type="search" placeholder="Start Your Search..." id = "search-input" autocomplete="off">
-          <button type="submit" onclick="storeSearch()">Search</button>
+          <button type="submit" onclick="search()">Search</button>
           <script>
             function storeSearch() {
               var searchInput = document.getElementById("search-input").value;
-
-              console.log(searchInput);
-              // fetch("serverside/query.php");
+              localStorage.setItem("searchValue", searchValue);
+              search();
             }
           </script>
+      </form> -->
+      <form class="sampleFrom" id="search-form">
+        <input type="search" placeholder="Search..." id="search-input" autocomplete="off">
+        <button type="submit" id="button">Search</button>
       </form>
       </div>
     </div>
     
 
-    <!-- New Div Break -->
 
-    <div class="container" id="squares">
-      <div class="row">
-        <div class="col-md-6" id = "sq1">
-          Square 1
-        </div>  
-        <div class="col-md-6" id = "sq2">
-          Square 2
+
+    <div id="results" class="text-center" style="color: white;"></div>
+    <div class="grid">
+      <!-- <a href="carview.html"> -->
+        <div class="grid-item" id="item0" name = "0" style="display: none;" style="display: none;">
+          <div class="grid-content" id="toyotacamry" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+            <div class="banner">
+              <h1 class="name">2012 Toyota	Camry</h1>
+            </div>								
+          </div>
+        </div>
+      <!-- </a> -->
+      <div class="grid-item" id="item1" name = "1" style="display: none;">
+        <div class="grid-content"  id="lexusls" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2010 Lexus LS</h1>
+          </div>															
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-6" id = "sq3">
-          Square 3
+      <div class="grid-item" id="item2" name = "2" style="display: none;">
+        <div class="grid-content" id="suburulegacy" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2017 Suburu Legacy</h1>
+          </div>																			
         </div>
-        <div class="col-md-6" id = "sq4">
-          Square 4
+      </div>
+      <div class="grid-item" id="item3" name = "3" style="display: none;">
+        <div class="grid-content"  id="AudiA6" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2015 Audi A6</h1>
+          </div>																			
         </div>
+      </div>
+      <div class="grid-item" id="item4" name = "4" style="display: none;">
+        <div class="grid-content"  id="Chrysler300" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2016 Chrysler 300</h1>
+          </div>																	
+        </div>
+      </div>
+      <div class="grid-item" id="item5" name = "5" style="display: none;">
+        <div class="grid-content"  id="ChevroletSonic" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2015 Chevrolet Sonic</h1>
+          </div>																		
+        </div>
+      </div>
+      <div class="grid-item" id="item6" name = "6" style="display: none;">
+        <div class="grid-content"  id="BMW3Series" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">BMW 3 Series</h1>
+          </div>																		
+        </div>
+      </div>
+      <div class="grid-item" id="item7" name = "7" style="display: none;">
+        <div class="grid-content"  id="DodgeCharger" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2018 Dodge Charger</h1>
+          </div>																
+        </div>
+      </div>
+      <div class="grid-item" id="item8" name = "8" style="display: none;">
+        <div class="grid-content"  id="ToyotaCorolla" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2017 Toyota Corolla</h1>
+          </div>																
+        </div>
+      </div>
+      <div class="grid-item" id="item9" name = "9" style="display: none;">
+        <div class="grid-content"  id="VolkswagenPassat" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2014 Volkswagen Passat</h1>
+          </div>																			
+        </div>
+      </div>
+      <div class="grid-item" id="item10" name = "10" style="display: none;">
+        <div class="grid-content" id="HyundaiSonata" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2018 Hyundai Sonata</h1>
+          </div>																
+        </div>
+      </div>
+      <div class="grid-item" id="item11" name = "11" style="display: none;">
+        <div class="grid-content"  id="HondaCrv" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2016 Honda CRV</h1>
+          </div>																		
+        </div>
+      </div>
+      <div class="grid-item" id="item12" name = "12" style="display: none;">
+        <div class="grid-content"  id="NissanVersa" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2019 Nissan Versa</h1>
+          </div>																			
+        </div>
+      </div>
+      <div class="grid-item" id="item13" name = "13" style="display: none;">
+        <div class="grid-content"  id="AcuraRDX" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2019 Acura RDX</h1>
+          </div>																		
+        </div>
+      </div>
+      <div class="grid-item" id="item14" name = "14" style="display: none;">
+        <div class="grid-content"  id="KiaSportage" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2020 Kia Sportage</h1>
+          </div>																		
+        </div>
+      </div>
+      <div class="grid-item" id="item15" name = "15" style="display: none;">
+        <div class="grid-content"  id="HondaOdyssey" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2014 Honda Oddyssey</h1>
+          </div>																	
+        </div>
+      </div>
+      <div class="grid-item" id="item16" name = "16" style="display: none;">
+        <div class="grid-content"  id="JeepCompass" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2017 Jeep Compas</h1>
+          </div>																	
+        </div>
+      </div>
+      <div class="grid-item" id="item17" name = "17" style="display: none;">
+        <div class="grid-content"  id="SuburuBRZ" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2013 Suburu BRZ</h1>
+          </div>																	
+        </div>
+      </div>
+      <div class="grid-item" id="item18" name = "18" style="display: none;">
+        <div class="grid-content" id="NissanRogue" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2021 Nissan Rogue</h1>
+          </div>																		
+        </div>
+      </div>
+      <div class="grid-item" id="item19" name = "19" style="display: none;">
+        <div class="grid-content"  id="VolkswagenJetta" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2014 Volkswagen Jetta</h1>
+          </div>																	
+        </div>
+      </div>
+      <div class="grid-item" id="item20" name = "20" style="display: none;">
+        <div class="grid-content"  id="ChryslerPacifica" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2017 Chrysler Pacifica</h1>
+          </div>																	
+        </div>
+      </div>
+      <div class="grid-item" id="item21" name = "21" style="display: none;">
+        <div class="grid-content"  id="FordEscape" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2018 Ford Escape</h1>
+          </div>																		
+        </div>
+      </div>
+      <div class="grid-item" id="item22" name = "22" style="display: none;">
+        <div class="grid-content" id="ChevroletMalibu"  ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2020 Chevrolet Malibu</h1>
+          </div>																		
+        </div>
+      </div>
+      <div class="grid-item" id="item23" name = "23" style="display: none;">
+        <div class="grid-content"  id="ToyotaHighlander" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2022 Toyota Highlander</h1>
+          </div>																		
+        </div>
+      </div>
+      <div class="grid-item" id="item24" name = "24" style="display: none;">
+        <div class="grid-content"  id="GMCAcadia" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2017 GMC Arcadia</h1>
+          </div>																										
+        </div>
+      </div>
+      <div class="grid-item" id="item25" name = "25" style="display: none;">
+        <div class="grid-content"  id="HondaAccord" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2013 Honda Accord Sport</h1>
+          </div>																	
+        </div>
+      </div>
+      <div class="grid-item" id="item26" name = "26" style="display: none;">
+        <div class="grid-content"  id="ToyotaRav" ontouchstart="createDivElement($(this).parent().attr('id'))" onclick="createDivElement($(this).parent().attr('id'))">
+          <div class="banner">
+            <h1 class="name">2016 Toyota Rav4</h1>
+          </div>																				
+        </div>
+      </div>
+    </div>
+    <div class="servicebox">
+      <h1 class="text-center" id="services">Our Services</h1>
+    </div>
+    <div class="cont">
+      <div class="sq1"  onclick="location.href='cars.html'">
+        <div class="sqtext">BROWSE</div>
+      </div>
+      <div class="sq2"   onclick="location.href='sell.html'">
+        <div class="sqtext">SELL</div>
+      </div>
+      <div class="sq3"  onclick="location.href='contact.html'">
+        <div class="sqtext">CONTACT US</div>
+      </div>
+      <div class="sq4" onclick="location.href='maintain.html'">
+        <div class="sqtext">Maintain</div>
       </div>
     </div>
     <br>
@@ -125,35 +341,78 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
 
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
 
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "110823124905032");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
 
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v15.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
     <!-- -------------------------Script for changing images------------------------- -->
     <script>
-       // Declare an array of image URLs to use as the background
-    const images = ['Images/tesla.gif', 'Images/rolly.gif', 'Images/electric.gif', 'Images/road.gif', 'Images/AC.gif'];
+      const images = ['Images/homepage/electric.gif', 'Images/homepage/AC.gif', 'Images/homepage/vroom.gif', 'Images/homepage/ferrari.gif', 'Images/homepage/mech.gif'];
+      
+      let imageIndex = 0;
 
-// Declare a counter to keep track of the current image
-    let imageIndex = 0;
+      function updateDivImage() {
+        const div = document.getElementById('vidCont');
 
-// Declare a function to update the background image of the div
-    function updateDivImage() {
-      // Get the div element
-      const div = document.getElementById('vidCont');
+        div.style.backgroundImage = `url(${images[imageIndex]})`;
 
-      // Update the div's background image
-      div.style.backgroundImage = `url(${images[imageIndex]})`;
-
-      // Increment the counter
-      imageIndex = (imageIndex + 1) % images.length;
+        imageIndex = (imageIndex + 1) % images.length;
     }
-
-    // Call the updateDivImage function every 1000 milliseconds (one second)
-    setInterval(updateDivImage, 3300); //change the interval back to 4000
+    setInterval(updateDivImage, 4000); //change the interval back to 4000
+      
     </script>
     <!-- ---------------------------------------------------------------------------- -->
   
-
 
 
     <!-- This is the reload animation code -->
@@ -165,6 +424,8 @@
         loader.style.display = "none";
       })
     </script>
+    <script src="js/homepage.js"></script>
+    <script src="js/cars.js"></script>
   </body>
   <footer>
     <div class="container pt-5 border-bottom">
@@ -182,7 +443,7 @@
             <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">Pages</h5>
           <ul class="list-group">
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="index.html">Home</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="finance.html">Finance</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="sell.html">Sell</a></li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="cars.html">Inventory</a></li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="contact.html">Contact Us!</a></li>
           </ul>
@@ -191,15 +452,14 @@
             <h5 class="mb-4 font-weight-bold text-uppercase" style="color: white;" >Money</h5>
           <ul class="list-group">
             <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.moneyunder30.com/car-affordability-calculator" target="_blank">Income Calculator</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="finance.html">Finance Calculator</a></li>
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://stackshare.io/naologic">Car Guide</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.edmunds.com/car-buying/10-steps-to-buying-a-used-car.html" target="_blank" >Car Guide</a></li>
           </ul>
           </div>
   
           <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
             <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">What we are</h5>
           <ul class="list-group">
-            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>About</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.facebook.com/TestingForRed" target="_blank"></i>Facebook</a></li>
           </ul>
           </div>
           <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
@@ -209,14 +469,14 @@
               <a href="https://github.com/stevierajeshmevsd/BPAWEBSITE2"target="_blank" ><i class="fa fa-linkedin mr-1"></i>Github</a>
             </li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-              <a href="#"><i class="fa fa-linkedin mr-1"></i>Documentation</a>
+              <a href="https://docs.google.com/document/d/18Kg-OlYQx4n9niRa5weRcWKiVonnzjpZcPlCq0eRttI/edit?usp=sharing" target="_blank"><i class="fa fa-linkedin mr-1"></i>Documentation</a>
             </li>
           </ul>
           </div>
         </div>
           <div class="col-md-12">
             <div class="py-4 d-flex justify-content-center align-items-center">
-              <a class="mr-4" href="index.html"> © Jarson Moters</a>
+              <a class="mr-4" href="index.html"> © Jarson Motors</a>
             </div>
           </div>
       </div>

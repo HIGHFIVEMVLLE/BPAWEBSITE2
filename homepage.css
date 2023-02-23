@@ -1,4 +1,6 @@
 /* ----------------------------Html------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 html
 {
   /* background: url(images/smokeycar.gif) no-repeat center fixed; */
@@ -32,6 +34,13 @@ body
   margin-right: auto;
   font-family: 'Michroma', sans-serif;
   font-size: 70px;
+  color: white;
+}
+
+#services{
+  font-family: 'Play', sans-serif;
+  letter-spacing: 5px;
+  font-size: 40px;
   color: white;
 }
 
@@ -116,34 +125,97 @@ input[type="search"]:focus {
 
 /* ----------------------------Squares info------------------------------------ */
 
-
-
-#squares {
-  margin-top: 2%; 
+.servicebox{
+  align-self: center;
+  margin-left: 33%;
+  border-radius: 9px;
+  margin-top: 0.5%;
+  background-size: 400% 400%;
+  width: 35%;
 }
 
-#sq1, #sq2, #sq3, #sq4 {
-  background-color: blue;
-  border-color: white;
+
+
+.cont{
+  margin-top: 3%;
 }
 
-#sq1 .col-md-6{
-  margin-right: 5%;
+.sqtext {
+  margin-top: 50%;
+  margin-left: 3%;
+  color: white;
+  font-family: 'Play', sans-serif;
+  font-size: x-large;
+  font-weight: 900;
+  letter-spacing: 9px;
 }
 
-#sq2 .col-md-6{
-  margin-left: 5%;
+.sq1{
+  background: url(Images/Browse.png) no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  border: solid 3px black;
+  width: 29%;
+  aspect-ratio: 4 / 2;
+  float: left;
+  margin-left: 20%;
+  transition: all 300ms;
 }
+.sq1:hover {
+  opacity: 0.8;
+  transform: scale(1.10);
+ }
+.sq2{
+  background: url(Images/Sell.png) no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  border: solid 3px black;
+  width: 29%;
+  float: right;
+  margin-right: 20%;
+  /* margin-top: 2%; */
+  aspect-ratio: 4 / 2;
+  transition: all 300ms;
+}
+.sq2:hover {
+  opacity: 0.8;
+  transform: scale(1.10);
+ }
+.sq3{
+  background: url(Images/Contact.png) no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  border: solid 3px black;
+  width: 29%;
+  float: left;
+  margin-left: 20%;
+  margin-top: 2%;
+  aspect-ratio: 4 / 2;
+  transition: all 300ms;
 
-#sq3 .col-md-6{
-  margin-top: 5%;
-  margin-right: 5%;
 }
+.sq3:hover {
+  opacity: 0.8;
+  transform: scale(1.10);
+ }
+.sq4{
+  background: url(Images/Fix.png) no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  border: solid 3px black;
+  width: 29%;
+  float: right;
+  margin-right: 20%;
+  margin-top: 2%;
+  height: 40%;
+  aspect-ratio: 4 / 2;
+  transition: all 300ms;
+}
+.sq4:hover {
+  opacity: 0.8;
+  transform: scale(1.10);
+ }
 
-#sq4 .col-md-6{
-  margin-top: 5%;
-  margin-left: 5%;
-}
 
 
 .animation{
@@ -209,5 +281,68 @@ input[type="search"]:focus {
     background:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
     cursor: pointer;
     opacity: 1;
+  }
+  .sq1{
+    border-radius: 10px;
+    border: solid 3px black;
+    width:70%;
+    aspect-ratio: 4 / 2;
+    float: left;
+    margin-left: 15%;
+    margin-top: 5%;
+  }
+  .sq2{
+    border-radius: 10px;
+    border: solid 3px black;
+    width:70%;
+    float: left;
+    /* margin-top: 2%; */
+    aspect-ratio: 4 / 2;
+    margin-left: 15%;
+    margin-top: 2%;
+  }
+  .sq3{
+    border-radius: 10px;
+    border: solid 3px black;
+    width:70%;
+    float: left;
+    margin-top: 2%;
+    aspect-ratio: 4 / 2;
+    margin-left: 15%;
+  
+  }
+  .sq4{
+    border-radius: 10px;
+    border: solid 3px black;
+    width:70%;
+    float: left;
+    margin-top: 2%;
+    aspect-ratio: 4 / 2;
+    margin-left: 15%;
+
+  }
+  .servicebox{
+    align-self: center;
+    margin-left: 22%;
+    margin-top: 6%;
+    border-radius: 9px;
+    margin-top: 0.5%;
+    /* background: linear-gradient(147deg, #131212 0%, #1e1e1f 74%); */
+    width: 55%;
+  }
+  #services{
+    font-family: 'Michromas', sans-serif;
+  
+    font-size: 23px;
+    color: white;
+  }
+  .sqtext {
+    margin-top: 50%;
+    margin-left: 3%;
+    color: white;
+    font-family: 'Play', sans-serif;
+    font-size: large;
+    font-weight: 900;
+    letter-spacing: 9px;
   }
 }
