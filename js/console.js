@@ -61,11 +61,23 @@ var firebaseConfig = {
           ODO.innerHTML = value.Odometer + " ";
       
           var button = document.createElement("button");
+          //more info button class name: 
           button.className = "mailButton";
           button.innerHTML = "More Info";
           button.onclick = function() {
-            // window.location("personView.html");
-            // localStorage.setItem()
+            window.location.replace("personView.html");
+            localStorage.setItem("name", value.name);
+            localStorage.setItem("number", value.Number);
+            localStorage.setItem("email", value.Email);
+            localStorage.setItem("make", value.Make);
+            localStorage.setItem("model", value.Model);
+            localStorage.setItem("color", value.Color);
+            localStorage.setItem("ODO", value.Odometer);
+            localStorage.setItem("year", value.Year);
+            localStorage.setItem("license", value.License);
+            // console.log(value.name);
+            // console.log(value.Email);
+            // console.log(value.Number);
           }
           
           container.appendChild(div); 

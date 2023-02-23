@@ -40,3 +40,27 @@ footer {
 .results{
   font-family: 'Play', sans-serif;
 }
+
+
+
+
+/* ----------------------console page---------------------- */
+
+.console{
+  background-color: white;
+  width: 50%;
+  aspect-ratio: 5/2;
+  margin-left: 25%;
+
+
+}
+
+.userInfo {
+  background-color: red;
+  width: 50%;
+  aspect-ratio: 4/3;
+  margin-left: 25%;
+  margin-top: -2%;
+  height: 50%;
+  padding-top: 0px;
+}

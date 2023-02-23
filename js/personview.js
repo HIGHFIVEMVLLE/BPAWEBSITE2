@@ -1,0 +1,9 @@
+console.log(localStorage.getItem("name"));
+console.log(localStorage.getItem("number"));
+console.log(localStorage.getItem("email"));
+console.log(localStorage.getItem("make"));
+console.log(localStorage.getItem("model"));
+console.log(localStorage.getItem("color"));
+console.log(localStorage.getItem("ODO"));
+console.log(localStorage.getItem("year"));
+console.log(localStorage.getItem("license"));
